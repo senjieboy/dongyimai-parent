@@ -1,0 +1,12 @@
+com\senjie\sellergoods\controller\ContentController.class
+com\senjie\sellergoods\controller\SpecificationController.class
+com\senjie\sellergoods\controller\ItemController.class
+com\senjie\sellergoods\controller\SellerController.class
+com\senjie\sellergoods\controller\TypeTemplateController.class
+com\senjie\sellergoods\controller\GoodsController.class
+com\senjie\sellergoods\controller\LoginController.class
+com\senjie\sellergoods\controller\ContentCategoryController.class
+com\senjie\sellergoods\controller\ItemCatController.class
+com\senjie\sellergoods\controller\BrandController.class
+com\senjie\sellergoods\controller\UploadController.class
+com\senjie\sellergoods\controller\SpecificationOptionController.class

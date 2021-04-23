@@ -1,0 +1,8 @@
+com\senjie\shop\controller\UploadController.class
+com\senjie\shop\controller\ItemCatController.class
+com\senjie\shop\controller\GoodsDescController.class
+com\senjie\shop\controller\GoodsController.class
+com\senjie\shop\controller\SellerController.class
+com\senjie\shop\controller\LoginController.class
+com\senjie\shop\controller\TypeTemplateController.class
+com\senjie\shop\service\UserDetailServiceImpl.class

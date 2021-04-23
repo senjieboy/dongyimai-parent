@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--create a connection factory activeMQ-->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://192.168.188.130:61616"/>
+    </bean>
+
+    <!--spring connection factory-->
+    <bean id="singleConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="connectionFactory"/>
+    </bean>
+
+    <!--jms utility class -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="singleConnectionFactory"/>
+    </bean>
+
+    <!--create a message queue-->
+    <bean id="queueSolrDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="dongyimai-queue-solr"/>
+    </bean>
+
+    <!--create a message delete queue-->
+    <bean id="queueDeleteSolrDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="dongyimai-queue-solr-delete"/>
+    </bean>
+    <!--create a message page queue-->
+    <bean id="queuePageDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="dongyimai-queue-page"/>
+    </bean>
+    <!--create delete a message  page queue-->
+    <bean id="queueDeletePageDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="dongyimai-queue-page-delete"/>
+    </bean>
+</beans>

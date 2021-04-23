@@ -1,0 +1,3 @@
+com\senjie\search\listener\SolrDeleteMessageListener.class
+com\senjie\search\listener\SolrMessageListener.class
+com\senjie\search\service\Impl\ItemSearchServiceImpl.class

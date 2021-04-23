@@ -1,0 +1,9 @@
+com\senjie\sellergoods\service\Impl\GoodsDescServiceImpl.class
+com\senjie\sellergoods\service\Impl\BrandServiceImpl.class
+com\senjie\sellergoods\service\Impl\TypeTemplateServiceImpl.class
+com\senjie\sellergoods\service\Impl\SpecificationOptionServiceImpl.class
+com\senjie\sellergoods\service\Impl\ItemCatServiceImpl.class
+com\senjie\sellergoods\service\Impl\ItemServiceImpl.class
+com\senjie\sellergoods\service\Impl\GoodsServiceImpl.class
+com\senjie\sellergoods\service\Impl\SpecificationServiceImpl.class
+com\senjie\sellergoods\service\Impl\SellerServiceImpl.class

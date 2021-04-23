@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.senjie.sms"/>
+    <!--create a connection factory activeMQ-->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://192.168.188.130:61616"/>
+    </bean>
+    <!--spring connection factory-->
+    <bean id="singleConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="connectionFactory"/>
+    </bean>
+    <!--create a message queue-->
+    <bean id="queueSmsDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="dongyimai-queue-sms"/>
+    </bean>
+    <!--Listening  to the class-->
+    <bean id="shortMessageSendListener" class="com.senjie.sms.listener.ShortMessageSendListener"/>
+    <!--Message listener container-->
+    <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <!--connection factory-->
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--message queue to listen on-->
+        <property name="destination" ref="queueSmsDestination"/>
+        <!--listener to the class-->
+        <property name="messageListener" ref="shortMessageSendListener"/>
+    </bean>
+
+</beans>
